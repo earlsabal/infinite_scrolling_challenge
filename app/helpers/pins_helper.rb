@@ -31,7 +31,7 @@ module PinsHelper
 	end
 
 	def pin_description(pin)
-
+		pin["description"]
 	end
 
 	def pinner_username(pin)
