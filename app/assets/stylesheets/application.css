@@ -18,10 +18,10 @@
   position: fixed;
   bottom: 0;
   background-color: #ffffff;
+  opacity: .8;
   padding: 0;
-
   margin-left: -8px;
-  outline-color: gray;  
+  outline-color: white;  
   outline-style: outset;
   width: 100%;
   z-index: 500;
