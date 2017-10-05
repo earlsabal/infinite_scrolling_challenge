@@ -5,12 +5,12 @@ class PinsController < ApplicationController
 	PER_PAGE = 5
 
 	def index
-		@file = File.read("pins_formatted.json")
-		@pins = JSON.parse(@file).paginate(page: params[:page], per_page: 5)
+
+		@pins = generate_pins(params[:page])
+
 	end
 
-	
-
+	private
 	def generate_pins(page)
 
 		current_pins = ALL_PINS.paginate(page: page, per_page: PER_PAGE)
@@ -28,6 +28,5 @@ class PinsController < ApplicationController
 		resetted_pins.paginate(page: START_PAGE, per_page: per_page)
 
 	end
-
 
 end
