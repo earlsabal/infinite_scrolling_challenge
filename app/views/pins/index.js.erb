@@ -1,6 +1,6 @@
 $('#pins').append('<%= j render("pins") %>');
 <% if @pins.next_page %>
-	console.log('<%= @pins.current_page %>')
+	// console.log('<%= @pins.current_page %>')
   $('.pagination').replaceWith('<%= j will_paginate(@pins) %>');
 <% else %>
   $('.pagination').remove();
