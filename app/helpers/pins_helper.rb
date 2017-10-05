@@ -1,5 +1,7 @@
 module PinsHelper
 
+	# CONTROLLER
+
 	ALL_PINS = JSON.parse(File.read("pins_formatted.json"))
 	START_PAGE = 1
 	PER_PAGE = 5
@@ -20,6 +22,28 @@ module PinsHelper
 		per_page = ending_pins.size + PER_PAGE
 		resetted_pins.paginate(page: START_PAGE, per_page: per_page)
 
+	end
+
+	# VIEWS
+
+	def pin_image(pin)	
+		image_tag(pin["images"]["236x"]["url"])
+	end
+
+	def pin_description(pin)
+
+	end
+
+	def pinner_username(pin)
+		pin["pinner"]["username"]
+	end
+
+	def pinner_pic(pin)
+		image_tag( pin["pinner"]["image_small_url"] )
+	end
+
+	def pin_created_at(pin)
+		pin["created_at"]
 	end
 
 end

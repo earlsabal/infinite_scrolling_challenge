@@ -1,9 +1,9 @@
-<%= image_tag( pin["images"]["236x"]["url"] ) %>
-<p><%= pin["description"] %></p>
+<%= pin_image(pin) %>
+<p><%= pin_description(pin) %></p>
 
 <p>Posted by:</p>
-<%= image_tag( pin["pinner"]["image_small_url"] ) %>
-<%= pin["pinner"]["username"] %>
-<p>Posted: <%= pin["created_at"] %></p>
+<%=  %>
+<%= pinner_username(pin) %>
+<p>Posted: <%= pin_created_at(pin) %></p>
 
 <HR>
