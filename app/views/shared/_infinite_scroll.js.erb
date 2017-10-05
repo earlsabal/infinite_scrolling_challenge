@@ -1,3 +1,4 @@
+// Implements infinite scrolling inside classes with id widgets
 $('#widgets').append('<%= j render(page_partial) %>');
 <% if widgets.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(widgets) %>');

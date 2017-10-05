@@ -1,24 +1,31 @@
-# README
+# Infinite Scroll Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Summary of Project
 
-Things you may want to cover:
+This project takes in a JSON file full of Pins and shows all pins on a page with infinite scrolling. Once the last page of pins is loaded, the next page will start back at the beginning relisting the first pins.
 
-* Ruby version
+## Loading Pins
 
-* System dependencies
+The JSON file is located in the root folder and labeled as `pins_formatted.json`
 
-* Configuration
+The logic for loading the pins using the JSON file is all done inside the PinsHelper located at:
 
-* Database creation
+`/app/helpers/pins_helper.rb`
 
-* Database initialization
+These pins can be loaded using the method `generates_pins(page)` inserting `params[:page]` for the arguments inside a controller.
 
-* How to run the test suite
+## Infinite Scrolling
 
-* Services (job queues, cache servers, search engines, etc.)
+In order to use the infinite scrolling, place widgets inside a `<div id="widgets">` and use pagination with a `<div class="pagination">`
 
-* Deployment instructions
+You can render partial the AJAX using `shared/_infinite_scroll.js.erb` with locals `page_partial:` being the partial you want to load and `widgets:` being the widgets you want to load such as `@pins`
 
-* ...
+## Accessing Pin Information
+
+I accessed the pins manually to display images and information in the views, and the methods used to extract that information are also inside the PinsHelper
+
+## Future Features
+
+The Search Bar and Navigation Bar are not functional at the moment, but are shown and infinite scroll is not affected from these features.
+
+I did not use models in this challenge I am are getting the pins directly from the JSON and was not asked to save them.
