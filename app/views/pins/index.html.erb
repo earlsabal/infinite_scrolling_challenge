@@ -1,0 +1,15 @@
+<div id="pins">
+	<% @pins.each do |pin| %>
+		<%= image_tag( pin["images"]["236x"]["url"] ) %>
+		<p><%= pin["description"] %></p>
+
+		<p>Posted by:</p>
+		<%= image_tag( pin["pinner"]["image_small_url"] ) %>
+		<%= pin["pinner"]["username"] %>
+		<p>Posted: <%= pin["created_at"] %></p>
+		
+		<HR>
+	<% end %>
+</div>
+	
+<%= will_paginate @pins %>
