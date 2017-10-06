@@ -12,7 +12,7 @@ The logic for loading the pins using the JSON file is all done inside the PinsHe
 
 `/app/helpers/pins_helper.rb`
 
-These pins can be loaded using the method `generates_pins(page)` inserting `params[:page]` for the arguments inside a controller.
+First, insert `include PinsHelper` inside your controller and these pins can be loaded using the method `generates_pins(page)` inserting `params[:page]` for the arguments.
 
 ## Infinite Scrolling
 
